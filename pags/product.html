@@ -1,891 +1,929 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <title>
-            Gin Tonic Mar del Plata
-        </title>
-        <meta name="description" content="Gin Tonic artesanal en Mar del Plata. Descubre los mejores productos y sabores.">
-        <meta name="keywords" content="Gin Tonic, Artesanal, Mar del Plata, Bebidas Premium">
-        <script src="https://cdn.tailwindcss.com">
-        </script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
-        <!-- <link rel="stylesheet" href="/styles/product.css"> -->
-         <style>
-            
-body {
-    font-family: 'Roboto', sans-serif;
-}
 
-html {
-    scroll-behavior: smooth;
-}
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Gin Tonic Mar del Plata
+    </title>
+    <meta name="description" content="Gin Tonic artesanal en Mar del Plata. Descubre los mejores productos y sabores.">
+    <meta name="keywords" content="Gin Tonic, Artesanal, Mar del Plata, Bebidas Premium">
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="/styles/product.css"> -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
 
-.navbar {
-    position: fixed;
-    z-index: 10;
-    width: 100%;
-    top: 0;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.navbar.scrolled {
-    background-color: rgba(0, 0, 0, 0.8);
-}
+        .navbar {
+            position: fixed;
+            z-index: 10;
+            width: 100%;
+            top: 0;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
 
-.nav-item {
-    transition: transform 0.3s ease-in-out;
-}
+        .navbar.scrolled {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
 
-.nav-link {
-    transition: transform 0.3s ease;
-}
+        .nav-item {
+            transition: transform 0.3s ease-in-out;
+        }
 
-.nav-link:hover {
-    transform: translateY(-5px);
-}
+        .nav-link {
+            transition: transform 0.3s ease;
+        }
 
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    animation: fadeIn 0.3s;
-    z-index: 50;
-}
+        .nav-link:hover {
+            transform: translateY(-5px);
+        }
 
-.back-to-top.show {
-    display: block;
-}
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            animation: fadeIn 0.3s;
+            z-index: 50;
+        }
 
-/* CSS para el menú hamburguesa */
-@media (max-width: 768px) {
-    #menu {
-        display: none;
-        /* Ocultar el menú inicialmente */
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 64px;
-        /* Justo debajo del navbar */
-        width: 100%;
-        left: 0;
-        z-index: 10;
-    }
+        .back-to-top.show {
+            display: block;
+        }
 
-    #menu.show {
-        display: flex;
-        /* Mostrar el menú al hacer clic */
-    }
-}
+        /* CSS para el menú hamburguesa */
+        @media (max-width: 768px) {
+            #menu {
+                display: none;
+                /* Ocultar el menú inicialmente */
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 64px;
+                /* Justo debajo del navbar */
+                width: 100%;
+                left: 0;
+                z-index: 10;
+            }
 
-#cart {
-    position: fixed;
-    right: -100%;
-    /* Fuera de la pantalla inicialmente */
-    top: 0;
-    height: 100vh;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(0);
-    /* Estado inicial: escondido */
-}
+            #menu.show {
+                display: flex;
+                /* Mostrar el menú al hacer clic */
+            }
+        }
 
-#cart.visible {
-    transform: translateX(-100%);
-    /* Estado visible */
-}
+        #cart {
+            position: fixed;
+            right: -100%;
+            /* Fuera de la pantalla inicialmente */
+            top: 0;
+            height: 100vh;
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(0);
+            /* Estado inicial: escondido */
+        }
 
-
-/* TEST */
+        #cart.visible {
+            transform: translateX(-100%);
+            /* Estado visible */
+        }
 
 
-/* Animaciones de entrada */
-.slide-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
+        /* TEST */
 
-.slide-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
 
-/* Botón de volver arriba */
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none; /* Ocultar inicialmente */
-    z-index: 1000;
-}
+        /* Animaciones de entrada */
+        .slide-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
 
-/* Animación de fade-in */
-.fade-in {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
+        .slide-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-.fade-in.visible {
-    opacity: 1;
-}
+        /* Botón de volver arriba */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            /* Ocultar inicialmente */
+            z-index: 1000;
+        }
 
-/* Animación de zoom */
-.zoom-in {
-    transform: scale(0.9);
-    opacity: 0;
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-}
+        /* Animación de fade-in */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
 
-.zoom-in.visible {
-    transform: scale(1);
-    opacity: 1;
-}
+        .fade-in.visible {
+            opacity: 1;
+        }
 
-.whatsapp-float {
-    position: fixed;
-    bottom: 80px; /* Ajusta la distancia desde el fondo para que esté encima del botón "↑" */
-    right: 20px; /* Mantiene la misma distancia desde la derecha */
-    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
-    /*background-color: #25D366; /* Color de fondo de WhatsApp */
-    border-radius: 50%; /* Hace que el botón sea redondo */
-    padding: 10px; /* Espaciado interno */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
-    display: flex; /* Para centrar el ícono */
-    justify-content: center; /* Centra el ícono horizontalmente */
-    align-items: center; /* Centra el ícono verticalmente */
-}
+        /* Animación de zoom */
+        .zoom-in {
+            transform: scale(0.9);
+            opacity: 0;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
 
-.whatsapp-float img {
-    width: 40px; /* Ajusta el tamaño del ícono */
-    height: 40px; /* Ajusta el tamaño del ícono */
-}
-         </style>
-    </head>
-    <body class="bg-gray-100">
-        <nav class="navbar fixed w-full z-10 top-0 bg-transparent text-white" id="navbar">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between h-16">
-                    <div class="flex items-center">
-                        <a href="./index.html">
-                            <img alt="Logo de Gin Tonic Mar del Plata" class="h-8 w-8" height="32"
-                                src="https://storage.googleapis.com/a1aa/image/GuE25FXLvLISGtNiXPeeclC6B3KSx8UZiMZ8wmrU0TYWHh3TA.jpg"
-                                width="32" />
-                        </a>
-                        <a href="./index.html">
-                            <h1 class="ml-3 text-2xl font-bold">Bodega Interal </h1>
-                        </a>
-                    </div>
-                    <button class="block md:hidden focus:outline-none" id="menu-button">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                    <div id="menu" class="hidden md:flex md:items-center space-x-4">
-                        <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
-                            href="#">Inicio</a>
-                        <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
-                            href="#productoSemanal">Semanal</a>
-                        <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
-                            href="#products">Productos</a>
-                        <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
-                            href="#promo">Promociones</a>
-                        <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
-                            href="#ingresos">Proximamente</a>
-                        <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
-                            href="#envios">Envios</a>
-                        <div class="relative">
-                            <button id="cartButton"
-                                class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
-                                <i class="fas fa-shopping-cart"></i>
-                                <span>Carrito (<span id="cartCount">0</span>)</span>
-                            </button>
-                        </div>
-                    </div>
+        .zoom-in.visible {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 80px;
+            /* Ajusta la distancia desde el fondo para que esté encima del botón "↑" */
+            right: 20px;
+            /* Mantiene la misma distancia desde la derecha */
+            z-index: 1000;
+            /* Asegúrate de que esté por encima de otros elementos */
+            /*background-color: #25D366; /* Color de fondo de WhatsApp */
+            border-radius: 50%;
+            /* Hace que el botón sea redondo */
+            padding: 10px;
+            /* Espaciado interno */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Sombra para darle profundidad */
+            display: flex;
+            /* Para centrar el ícono */
+            justify-content: center;
+            /* Centra el ícono horizontalmente */
+            align-items: center;
+            /* Centra el ícono verticalmente */
+        }
+
+        .whatsapp-float img {
+            width: 40px;
+            /* Ajusta el tamaño del ícono */
+            height: 40px;
+            /* Ajusta el tamaño del ícono */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <nav class="navbar fixed w-full z-10 top-0 bg-transparent text-white" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="./index.html">
+                        <img alt="Logo de Gin Tonic Mar del Plata" class="h-8 w-8" height="32"
+                            src="https://storage.googleapis.com/a1aa/image/GuE25FXLvLISGtNiXPeeclC6B3KSx8UZiMZ8wmrU0TYWHh3TA.jpg"
+                            width="32" />
+                    </a>
+                    <a href="./index.html">
+                        <h1 class="ml-3 text-2xl font-bold">Bodega Interal </h1>
+                    </a>
                 </div>
-            </div>
-            </div>
-        </nav>
-    
-    
-        <section class="pt-20 slide-in" id="productoSemanal">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                        Producto Semanal
-                    </h2>
-                    <p class="mt-4 text-lg leading-6 text-gray-600">
-                        Conoce nuestro producto destacado de la semana.
-                    </p>
-                </div>
-                <div class="mt-10">
-                    <div class="flex justify-center">
-                        <img alt="Imagen del producto semanal, una botella de Gin Tonic artesanal con un diseño elegante y moderno"
-                            class="rounded-lg shadow-lg" height="300" src="../img/BRANCA-ORIG.PNG" width="300" />
-                    </div>
-                    <div class="text-center mt-4">
-                        <h3 class="text-2xl font-bold">Fernet Branca</h3>
-                        <p class="mt-4 text-lg leading-6 text-gray-600">
-                            Descripcion.
-                        </p>
-    
-                        <p class="text-xl font-bold text-gray-900">
-                            $11.450
-                        </p>
-                        <a class="mt-2 inline-block bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600"
-                            href="https://wa.me/1234567890?text=Hola,%20quiero%20comprar%20el%20producto%20semanal">
-                            Comprar
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-    
-        <section class="pt-20 zoom-in" id="products">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                        Nuestros Productos
-                    </h2>
-                    <p class="mt-4 text-lg leading-6 text-gray-600">
-                        Explora nuestra variedad de productos artesanales.
-                    </p>
-                </div>
-                <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-                    <!-- Producto 1 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño clásico"
-                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
-                            src="../img/fernetBranca.png"
-                            width="300" />
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Fernet Branca</h3>
-                        <p class="mt-2 text-gray-600">Descripcion.</p>
-                        <p class="mt-2 text-2xl font-bold text-gray-900">$11.450</p>
-                        <div class="flex items-center mt-4">
-                            <button
-                                class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
-                                onclick="decrement('quantity1')">-</button>
-                            <input type="number" id="quantity1" value="0"
-                                class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
-                            <button
-                                class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
-                                onclick="increment('quantity1')">+</button>
-                            <button
-                                class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
-                                onclick="addToCart('Fernet Branca', 11450, 'quantity1')">Agregar</button>
-                        </div>
-                    </div>
-    
-                    <!-- Producto 2 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño frutal"
-                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
-                            src="../img/ginGordon.png"
-                            width="300" />
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Gin Gordon's</h3>
-                        <p class="mt-2 text-gray-600">Descripcion.</p>
-                        <p class="mt-2 text-2xl font-bold text-gray-900">$9.000</p>
-                        <div class="flex items-center mt-4">
-                            <button
-                                class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
-                                onclick="decrement('quantity2')">-</button>
-                            <input type="number" id="quantity2" value="0"
-                                class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
-                            <button
-                                class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
-                                onclick="increment('quantity2')">+</button>
-                            <button
-                                class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
-                                onclick="addToCart('Gin Gordons', 9000, 'quantity2')">Agregar</button>
-                        </div>
-                    </div>
-    
-                    <!-- Producto 3 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño especiado"
-                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
-                            src="../img/vodkaSmirnoff.png"
-                            width="300" />
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Vodka Smirnoff</h3>
-                        <p class="mt-2 text-gray-600">Descripcion.</p>
-                        <p class="mt-2 text-2xl font-bold text-gray-900">$9.500</p>
-                        <div class="flex items-center mt-4">
-                            <button
-                                class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
-                                onclick="decrement('quantity3')">-</button>
-                            <input type="number" id="quantity3" value="0"
-                                class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
-                            <button
-                                class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
-                                onclick="increment('quantity3')">+</button>
-                            <button
-                                class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
-                                onclick="addToCart('Vodka Smirnoff', 9500, 'quantity3')">Agregar</button>
-                        </div>
-                    </div>
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño clásico"
-                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
-                            src="../img/ronHavanaClub.png"
-                            width="300" />
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Ron Havana Club</h3>
-                        <p class="mt-2 text-gray-600">Descripcion.</p>
-                        <p class="mt-2 text-2xl font-bold text-gray-900">$15.670</p>
-                        <div class="flex items-center mt-4">
-                            <button
-                                class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
-                                onclick="decrement('quantity4')">-</button>
-                            <input type="number" id="quantity4" value="0"
-                                class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
-                            <button
-                                class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
-                                onclick="increment('quantity4')">+</button>
-                            <button
-                                class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
-                                onclick="addToCart('Ron Havana Club', 15670, 'quantity4')">Agregar</button>
-                        </div>
-                    </div>
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño clásico"
-                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
-                            src="../img/redLabel.png"
-                            width="300" />
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Whisky Red Label</h3>
-                        <p class="mt-2 text-gray-600">Descripcion.</p>
-                        <p class="mt-2 text-2xl font-bold text-gray-900">$25.000</p>
-                        <div class="flex items-center mt-4">
-                            <button
-                                class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
-                                onclick="decrement('quantity5')">-</button>
-                            <input type="number" id="quantity5" value="0"
-                                class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
-                            <button
-                                class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
-                                onclick="increment('quantity5')">+</button>
-                            <button
-                                class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
-                                onclick="addToCart('Whisky Red Label', 25000, 'quantity5')">Agregar</button>
-                        </div>
-                    </div>
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño clásico"
-                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
-                            src="../img/campari.png"
-                            width="300" />
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Campari</h3>
-                        <p class="mt-2 text-gray-600">Descripcion.</p>
-                        <p class="mt-2 text-2xl font-bold text-gray-900">$7.800</p>
-                        <div class="flex items-center mt-4">
-                            <button
-                                class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
-                                onclick="decrement('quantity6')">-</button>
-                            <input type="number" id="quantity6" value="0"
-                                class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
-                            <button
-                                class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
-                                onclick="increment('quantity6')">+</button>
-                            <button
-                                class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
-                                onclick="addToCart('Campari', 7800, 'quantity6')">Agregar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-    
-        <section class="pt-20 slide-in" id="promo">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                        Nuestras Promociones
-                    </h2>
-                    <p class="mt-4 text-lg leading-6 text-gray-600">
-                        Explora nuestra variedad de productos artesanales.
-                    </p>
-                </div>
-                <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-                    <!-- Producto 1 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño clásico"
-                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
-                            src="../img/promoFernet.png"
-                            width="300" />
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Fernet x Coca 2Lt</h3>
-                        <p class="mt-2 text-gray-600">Descripcion.</p>
-                        <p class="mt-2 text-2xl font-bold text-gray-900">$15.000</p>
-                        <div class="flex items-center mt-4">
-                            <button
-                                class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
-                                onclick="decrement('quantity7')">-</button>
-                            <input type="number" id="quantity7" value="0"
-                                class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
-                            <button
-                                class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
-                                onclick="increment('quantity7')">+</button>
-                            <button
-                                class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
-                                onclick="addToCart('Fernet x Coca 2Lt', 15000, 'quantity7')">Agregar</button>
-                        </div>
-                    </div>
-    
-                    <!-- Producto 2 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño frutal"
-                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
-                            src="../img/promoVodka.png"
-                            width="300" />
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Vodka x 4 Speed</h3>
-                        <p class="mt-2 text-gray-600">Descripcion.</p>
-                        <p class="mt-2 text-2xl font-bold text-gray-900">$10.000</p>
-                        <div class="flex items-center mt-4">
-                            <button
-                                class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
-                                onclick="decrement('quantity8')">-</button>
-                            <input type="number" id="quantity8" value="0"
-                                class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
-                            <button
-                                class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
-                                onclick="increment('quantity8')">+</button>
-                            <button
-                                class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
-                                onclick="addToCart('Vodka x 4 speed', 10000, 'quantity8')">Agregar</button>
-                        </div>
-                    </div>
-    
-                    <!-- Producto 3 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño especiado"
-                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
-                            src="../img/promoGin.png"
-                            width="300" />
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Gin x Sprite 2Lt</h3>
-                        <p class="mt-2 text-gray-600">Descripcion.</p>
-                        <p class="mt-2 text-2xl font-bold text-gray-900">$12.000</p>
-                        <div class="flex items-center mt-4">
-                            <button
-                                class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
-                                onclick="decrement('quantity9')">-</button>
-                            <input type="number" id="quantity9" value="0"
-                                class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
-                            <button
-                                class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
-                                onclick="increment('quantity9')">+</button>
-                            <button
-                                class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
-                                onclick="addToCart('Gin x Sprite 2Lt', 12000, 'quantity9')">Agregar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-        <section class="pt-20 slide-in" id="ingresos">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                        Próximamente
-                    </h2>
-                    <p class="mt-4 text-lg leading-6 text-gray-600">
-                        Nuevos productos y sabores en camino.
-                    </p>
-                </div>
-                <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño clásico"
-                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
-                            src="../img/jagger.png"
-                            width="300" />
-                        <h3 class="text-xl font-bold text-gray-900">
-                            Jagger
-                        </h3>
-                        <p class="mt-4 text-gray-600">
-                            Descripcion.
-                        </p>
-                    </div>
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño frutal"
-                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
-                            src="../img/BlueLabel.png"
-                            width="300" />
-                        <h3 class="text-xl font-bold text-gray-900">
-                            Whisky Blue Label
-                        </h3>
-                        <p class="mt-4 text-gray-600">
-                            Descripcion.
-                        </p>
-                    </div>
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño especiado"
-                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
-                            src="../img/macallan.png"
-                            width="300" />
-                        <h3 class="text-xl font-bold text-gray-900">
-                            Macallan
-                        </h3>
-                        <p class="mt-4 text-gray-600">
-                            Descripcion.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-        <section class="pt-20 slide-in" id="envios">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                        Envíos
-                    </h2>
-                    <p class="mt-4 text-lg leading-6 text-gray-600">
-                        Realizamos envíos a toda la ciudad.
-                    </p>
-                </div>
-                <div class="mt-10 flex justify-center mb-10">
-                    <iframe class="object-cover rounded-lg w-full max-w-4xl h-96 sm:h-500"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31594.83767607388!2d-57.5733!3d-38.0055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584d94b1b1b1b1b%3A0x1b1b1b1b1b1b1b1b!2sMar%20del%20Plata%2C%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1sen!2sus!4v1633021234567!5m2!1sen!2sus"
-                        style="border:0;">
-                    </iframe>
-                </div>
-            </div>
-        </section>
-    
-    
-        <footer class="bg-gray-800 text-white py-6 animate__animated animate__fadeInUp">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center">
-                    <div class="flex space-x-4">
-                        <img alt="Visa logo, a blue and gold rectangular logo with the word 'Visa' in bold letters"
-                            height="40" src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" width="40" />
-                        <img alt="MasterCard logo, two overlapping circles in red and yellow with the word 'MasterCard' below"
-                            height="40" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
-                            width="40" />
-                        <img alt="Mercado Pago logo" height="40" src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Mercado_Pago_logo.svg" width="40" />
-                        <img alt="Cuenta DNI logo" height="40" src="https://www.cajademedicos.com.ar/wp-content/uploads/logo-cuenta-dni.png" width="40" />
-                        <img alt="PersonalPay logo" height="40" src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Mercado_Pago_logo.svg" width="40" />
-                    </div>
-                    <div class="flex space-x-4">
-                        <a class="hover:text-gray-400" href="#">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a class="hover:text-gray-400" href="#">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a class="hover:text-gray-400" href="#">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a class="hover:text-gray-400" href="#">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="mt-4 flex justify-center">
-                    <p>© 2023 Gin Tonic Mar del Plata. Todos los derechos reservados.</p>
-                </div>
-            </div>
-        </footer>
-    
-        <div id="cartDetails" class="hidden fixed top-20 right-4 bg-white shadow-lg w-80 rounded-lg p-4">
-            <h2 class="text-xl font-bold mb-4">Carrito de Compras</h2>
-            <ul id="cartItems" class="space-y-2">
-                <!-- Productos aparecerán aquí -->
-            </ul>
-            <div class="border-t pt-2 mt-4">
-                <p class="flex justify-between">
-                    <span>Subtotal:</span>
-                    <span id="subtotal">$0.00</span>
-                </p>
-                <p class="flex justify-between font-bold">
-                    <span>Total:</span>
-                    <span id="total">$0.00</span>
-                </p>
-                <button id="buyButton" class="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg w-full">
-                    Finalizar Compra
+                <button class="block md:hidden focus:outline-none" id="menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
                 </button>
+                <div id="menu" class="hidden md:flex md:items-center space-x-4">
+                    <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                        href="#">Inicio</a>
+                    <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                        href="#productoSemanal">Semanal</a>
+                    <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                        href="#products">Productos</a>
+                    <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                        href="#promo">Promociones</a>
+                    <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                        href="#ingresos">Proximamente</a>
+                    <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                        href="#envios">Envios</a>
+                    <div class="relative">
+                        <button id="cartButton"
+                            class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Carrito (<span id="cartCount">0</span>)</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-    
-    
-        <a href="https://wa.me/2235298074?text=Me%20gustaria%20informacion%20sobre%20los%20productos%20en%20venta"
+        </div>
+    </nav>
+
+
+    <section class="pt-20 slide-in" id="productoSemanal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Producto Semanal
+                </h2>
+                <p class="mt-4 text-lg leading-6 text-gray-600">
+                    Conoce nuestro producto destacado de la semana.
+                </p>
+            </div>
+            <div class="mt-10">
+                <div class="flex justify-center">
+                    <img alt="Imagen del producto semanal, una botella de Gin Tonic artesanal con un diseño elegante y moderno"
+                        class="rounded-lg shadow-lg" height="300" src="../img/BRANCA-ORIG.PNG" width="300" />
+                </div>
+                <div class="text-center mt-4">
+                    <h3 class="text-2xl font-bold">Fernet Branca</h3>
+                    <p class="mt-4 text-lg leading-6 text-gray-600">
+                        Descripcion.
+                    </p>
+
+                    <p class="text-xl font-bold text-gray-900">
+                        $11.450
+                    </p>
+                    <a class="mt-2 inline-block bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600"
+                        href="https://wa.me/1234567890?text=Hola,%20quiero%20comprar%20el%20producto%20semanal">
+                        Comprar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="pt-20 zoom-in" id="products">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Nuestros Productos
+                </h2>
+                <p class="mt-4 text-lg leading-6 text-gray-600">
+                    Explora nuestra variedad de productos artesanales.
+                </p>
+            </div>
+            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Producto 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño clásico"
+                        class="h-60 w-full object-cover mb-6 rounded-lg" height="300" src="../img/fernetBranca.png"
+                        width="300" />
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Fernet Branca</h3>
+                    <p class="mt-2 text-gray-600">Descripcion.</p>
+                    <p class="mt-2 text-2xl font-bold text-gray-900">$11.450</p>
+                    <div class="flex items-center mt-4">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
+                            onclick="decrement('quantity1')">-</button>
+                        <input type="number" id="quantity1" value="0"
+                            class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
+                            onclick="increment('quantity1')">+</button>
+                        <button
+                            class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
+                            onclick="addToCart('Fernet Branca', 11450, 'quantity1')">Agregar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño frutal"
+                        class="h-60 w-full object-cover mb-6 rounded-lg" height="300" src="../img/ginGordon.png"
+                        width="300" />
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Gin Gordon's</h3>
+                    <p class="mt-2 text-gray-600">Descripcion.</p>
+                    <p class="mt-2 text-2xl font-bold text-gray-900">$9.000</p>
+                    <div class="flex items-center mt-4">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
+                            onclick="decrement('quantity2')">-</button>
+                        <input type="number" id="quantity2" value="0"
+                            class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
+                            onclick="increment('quantity2')">+</button>
+                        <button
+                            class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
+                            onclick="addToCart('Gin Gordons', 9000, 'quantity2')">Agregar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño especiado"
+                        class="h-60 w-full object-cover mb-6 rounded-lg" height="300" src="../img/vodkaSmirnoff.png"
+                        width="300" />
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Vodka Smirnoff</h3>
+                    <p class="mt-2 text-gray-600">Descripcion.</p>
+                    <p class="mt-2 text-2xl font-bold text-gray-900">$9.500</p>
+                    <div class="flex items-center mt-4">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
+                            onclick="decrement('quantity3')">-</button>
+                        <input type="number" id="quantity3" value="0"
+                            class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
+                            onclick="increment('quantity3')">+</button>
+                        <button
+                            class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
+                            onclick="addToCart('Vodka Smirnoff', 9500, 'quantity3')">Agregar</button>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño clásico"
+                        class="h-60 w-full object-cover mb-6 rounded-lg" height="300" src="../img/ronHavanaClub.png"
+                        width="300" />
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Ron Havana Club</h3>
+                    <p class="mt-2 text-gray-600">Descripcion.</p>
+                    <p class="mt-2 text-2xl font-bold text-gray-900">$15.670</p>
+                    <div class="flex items-center mt-4">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
+                            onclick="decrement('quantity4')">-</button>
+                        <input type="number" id="quantity4" value="0"
+                            class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
+                            onclick="increment('quantity4')">+</button>
+                        <button
+                            class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
+                            onclick="addToCart('Ron Havana Club', 15670, 'quantity4')">Agregar</button>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño clásico"
+                        class="h-60 w-full object-cover mb-6 rounded-lg" height="300" src="../img/redLabel.png"
+                        width="300" />
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Whisky Red Label</h3>
+                    <p class="mt-2 text-gray-600">Descripcion.</p>
+                    <p class="mt-2 text-2xl font-bold text-gray-900">$25.000</p>
+                    <div class="flex items-center mt-4">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
+                            onclick="decrement('quantity5')">-</button>
+                        <input type="number" id="quantity5" value="0"
+                            class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
+                            onclick="increment('quantity5')">+</button>
+                        <button
+                            class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
+                            onclick="addToCart('Whisky Red Label', 25000, 'quantity5')">Agregar</button>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño clásico"
+                        class="h-60 w-full object-cover mb-6 rounded-lg" height="300" src="../img/campari.png"
+                        width="300" />
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Campari</h3>
+                    <p class="mt-2 text-gray-600">Descripcion.</p>
+                    <p class="mt-2 text-2xl font-bold text-gray-900">$7.800</p>
+                    <div class="flex items-center mt-4">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
+                            onclick="decrement('quantity6')">-</button>
+                        <input type="number" id="quantity6" value="0"
+                            class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
+                            onclick="increment('quantity6')">+</button>
+                        <button
+                            class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
+                            onclick="addToCart('Campari', 7800, 'quantity6')">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="pt-20 slide-in" id="promo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Nuestras Promociones
+                </h2>
+                <p class="mt-4 text-lg leading-6 text-gray-600">
+                    Explora nuestra variedad de productos artesanales.
+                </p>
+            </div>
+            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Producto 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño clásico"
+                        class="h-60 w-full object-cover mb-6 rounded-lg" height="300" src="../img/promoFernet.png"
+                        width="300" />
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Fernet x Coca 2Lt</h3>
+                    <p class="mt-2 text-gray-600">Descripcion.</p>
+                    <p class="mt-2 text-2xl font-bold text-gray-900">$15.000</p>
+                    <div class="flex items-center mt-4">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
+                            onclick="decrement('quantity7')">-</button>
+                        <input type="number" id="quantity7" value="0"
+                            class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
+                            onclick="increment('quantity7')">+</button>
+                        <button
+                            class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
+                            onclick="addToCart('Fernet x Coca 2Lt', 15000, 'quantity7')">Agregar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño frutal"
+                        class="h-60 w-full object-cover mb-6 rounded-lg" height="300" src="../img/promoVodka.png"
+                        width="300" />
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Vodka x 4 Speed</h3>
+                    <p class="mt-2 text-gray-600">Descripcion.</p>
+                    <p class="mt-2 text-2xl font-bold text-gray-900">$10.000</p>
+                    <div class="flex items-center mt-4">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
+                            onclick="decrement('quantity8')">-</button>
+                        <input type="number" id="quantity8" value="0"
+                            class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
+                            onclick="increment('quantity8')">+</button>
+                        <button
+                            class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
+                            onclick="addToCart('Vodka x 4 speed', 10000, 'quantity8')">Agregar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño especiado"
+                        class="h-60 w-full object-cover mb-6 rounded-lg" height="300" src="../img/promoGin.png"
+                        width="300" />
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Gin x Sprite 2Lt</h3>
+                    <p class="mt-2 text-gray-600">Descripcion.</p>
+                    <p class="mt-2 text-2xl font-bold text-gray-900">$12.000</p>
+                    <div class="flex items-center mt-4">
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
+                            onclick="decrement('quantity9')">-</button>
+                        <input type="number" id="quantity9" value="0"
+                            class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
+                        <button
+                            class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
+                            onclick="increment('quantity9')">+</button>
+                        <button
+                            class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
+                            onclick="addToCart('Gin x Sprite 2Lt', 12000, 'quantity9')">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pt-20 slide-in" id="ingresos">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Próximamente
+                </h2>
+                <p class="mt-4 text-lg leading-6 text-gray-600">
+                    Nuevos productos y sabores en camino.
+                </p>
+            </div>
+            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño clásico"
+                        class="h-60 w-full object-cover mb-6 rounded-lg" height="300" src="../img/jagger.png"
+                        width="300" />
+                    <h3 class="text-xl font-bold text-gray-900">
+                        Jagger
+                    </h3>
+                    <p class="mt-4 text-gray-600">
+                        Descripcion.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño frutal"
+                        class="h-60 w-full object-cover mb-6 rounded-lg" height="300" src="../img/BlueLabel.png"
+                        width="300" />
+                    <h3 class="text-xl font-bold text-gray-900">
+                        Whisky Blue Label
+                    </h3>
+                    <p class="mt-4 text-gray-600">
+                        Descripcion.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño especiado"
+                        class="h-60 w-full object-cover mb-6 rounded-lg" height="300" src="../img/macallan.png"
+                        width="300" />
+                    <h3 class="text-xl font-bold text-gray-900">
+                        Macallan
+                    </h3>
+                    <p class="mt-4 text-gray-600">
+                        Descripcion.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pt-20 slide-in" id="envios">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Envíos
+                </h2>
+                <p class="mt-4 text-lg leading-6 text-gray-600">
+                    Realizamos envíos a toda la ciudad.
+                </p>
+            </div>
+            <div class="mt-10 flex justify-center mb-10">
+                <iframe class="object-cover rounded-lg w-full max-w-4xl h-96 sm:h-500"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31594.83767607388!2d-57.5733!3d-38.0055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584d94b1b1b1b1b%3A0x1b1b1b1b1b1b1b1b!2sMar%20del%20Plata%2C%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1sen!2sus!4v1633021234567!5m2!1sen!2sus"
+                    style="border:0;">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-gray-800 text-white py-6 animate__animated animate__fadeInUp">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex space-x-4">
+                    <img alt="Visa logo, a blue and gold rectangular logo with the word 'Visa' in bold letters"
+                        height="200" src="../img/pagos.png" width="200" />
+                </div>
+                <div class="flex space-x-4">
+                    <a class="hover:text-gray-400" href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="hover:text-gray-400" href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="hover:text-gray-400" href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="hover:text-gray-400" href="#">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-4 flex justify-center">
+                <p>© 2023 Gin Tonic Mar del Plata. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cartDetails" class="hidden fixed top-20 right-4 bg-white shadow-lg w-80 rounded-lg p-4">
+        <h2 class="text-xl font-bold mb-4">Carrito de Compras</h2>
+        <ul id="cartItems" class="space-y-2">
+            <!-- Productos aparecerán aquí -->
+        </ul>
+        <div class="border-t pt-2 mt-4">
+            <p class="flex justify-between">
+                <span>Subtotal:</span>
+                <span id="subtotal">$0.00</span>
+            </p>
+            <p class="flex justify-between font-bold">
+                <span>Total:</span>
+                <span id="total">$0.00</span>
+            </p>
+            <button id="buyButton" class="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg w-full">
+                Finalizar Compra
+            </button>
+        </div>
+    </div>
+
+
+    <a href="https://wa.me/2235298074?text=Me%20gustaria%20informacion%20sobre%20los%20productos%20en%20venta"
         target="_blank" class="whatsapp-float">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png?20220228223904" alt="WhatsApp" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png?20220228223904"
+            alt="WhatsApp" />
     </a>
-    
-        
-    
-        <button id="back-to-top"
-            class="back-to-top bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600">
-            ↑
-        </button>
-    
-    
-        <script>
-            // JavaScript optimizado con debounce
-function debounce(func, wait) {
-    let timeout;
-    return function (...args) {
-        const context = this;
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(context, args), wait);
-    };
-}
 
-window.addEventListener(
-    'scroll',
-    debounce(() => {
-        const navbar = document.getElementById('navbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+
+
+    <button id="back-to-top"
+        class="back-to-top bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600">
+        ↑
+    </button>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        // JavaScript optimizado con debounce
+        function debounce(func, wait) {
+            let timeout;
+            return function (...args) {
+                const context = this;
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(context, args), wait);
+            };
         }
-    }, 100)
-);
 
-// JavaScript para el menú hamburguesa
-const menuButton = document.getElementById('menu-button');
-const menu = document.getElementById('menu');
+        window.addEventListener(
+            'scroll',
+            debounce(() => {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }, 100)
+        );
 
-menuButton.addEventListener('click', () => {
-    menu.classList.toggle('show');
-});
+        // JavaScript para el menú hamburguesa
+        const menuButton = document.getElementById('menu-button');
+        const menu = document.getElementById('menu');
 
-// Mostrar botón "Volver arriba"
-const backToTop = document.getElementById("back-to-top");
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-        backToTop.classList.add("show");
-    } else {
-        backToTop.classList.remove("show");
-    }
-});
-backToTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-});
+        menuButton.addEventListener('click', () => {
+            menu.classList.toggle('show');
+        });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll('.fade-in');
-
-    const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target);
+        // Mostrar botón "Volver arriba"
+        const backToTop = document.getElementById("back-to-top");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add("show");
+            } else {
+                backToTop.classList.remove("show");
             }
         });
-    }, options);
-
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll('section');
-
-    const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('slide-in');
-                observer.unobserve(entry.target);
-            }
+        backToTop.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
-    }, options);
 
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-});
-function increment() {
-    var quantityInput = document.getElementById('quantity');
-    quantityInput.value = parseInt(quantityInput.value) + 1;
-    updateBuyButton();
-}
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll('.fade-in');
 
-function decrement() {
-    var quantityInput = document.getElementById('quantity');
-    if (parseInt(quantityInput.value) > 1) {
-        quantityInput.value = parseInt(quantityInput.value) - 1;
-        updateBuyButton();
-    }
-}
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
 
-function updateBuyButton() {
-    var quantity = document.getElementById('quantity').value;
-    var buyButton = document.getElementById('buyButton');
-    buyButton.href = `https://wa.me/1234567890?text=Hola,%20quiero%20comprar%20el%20Gin%20Tonic%20Clásico%20cantidad:%20${quantity}`;
-}
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
 
-// Actualizar la visualización del carrito
-// Inicializar carrito
-const cart = [];
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
 
-// Función para incrementar cantidad
-function increment(id) {
-    const input = document.getElementById(id);
-    if (input) input.value = parseInt(input.value) + 1;
-}
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll('section');
 
-// Función para decrementar cantidad
-function decrement(id) {
-    const input = document.getElementById(id);
-    if (input && input.value > 1) input.value = parseInt(input.value) - 1;
-}
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
 
-// Función para agregar al carrito
-function addToCart(name, price, quantityId) {
-    const quantity = parseInt(document.getElementById(quantityId).value);
-    const existingItem = cart.find(item => item.name === name);
-    if (existingItem) {
-        existingItem.quantity += quantity;
-    } else {
-        cart.push({ name, price, quantity });
-    }
-    updateCartDisplay();
-}
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('slide-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
 
-// Función para actualizar el carrito
-function updateCartDisplay() {
-    const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
-    document.getElementById("cartCount").textContent = cartCount;
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+        function increment() {
+            var quantityInput = document.getElementById('quantity');
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+            updateBuyButton();
+        }
 
-    const cartItems = document.getElementById("cartItems");
-    cartItems.innerHTML = "";
-    let subtotal = 0;
-    cart.forEach(item => {
-        subtotal += item.price * item.quantity;
-        const listItem = document.createElement("li");
-        listItem.className = "flex justify-between";
-        listItem.innerHTML = `
+        function decrement() {
+            var quantityInput = document.getElementById('quantity');
+            if (parseInt(quantityInput.value) > 1) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+                updateBuyButton();
+            }
+        }
+
+        function updateBuyButton() {
+            var quantity = document.getElementById('quantity').value;
+            var buyButton = document.getElementById('buyButton');
+            buyButton.href = `https://wa.me/1234567890?text=Hola,%20quiero%20comprar%20el%20Gin%20Tonic%20Clásico%20cantidad:%20${quantity}`;
+        }
+
+        // Actualizar la visualización del carrito
+        // Inicializar carrito
+        const cart = [];
+
+        // Función para incrementar cantidad
+        function increment(id) {
+            const input = document.getElementById(id);
+            if (input) input.value = parseInt(input.value) + 1;
+        }
+
+        // Función para decrementar cantidad
+        function decrement(id) {
+            const input = document.getElementById(id);
+            if (input && input.value > 1) input.value = parseInt(input.value) - 1;
+        }
+
+        // Función para agregar al carrito
+        function addToCart(name, price, quantityId) {
+            const quantity = parseInt(document.getElementById(quantityId).value);
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({ name, price, quantity });
+            }
+            updateCartDisplay();
+        }
+
+        // Función para actualizar el carrito
+        function updateCartDisplay() {
+            const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById("cartCount").textContent = cartCount;
+
+            const cartItems = document.getElementById("cartItems");
+            cartItems.innerHTML = "";
+            let subtotal = 0;
+            cart.forEach(item => {
+                subtotal += item.price * item.quantity;
+                const listItem = document.createElement("li");
+                listItem.className = "flex justify-between";
+                listItem.innerHTML = `
             <span>${item.name} (x${item.quantity})</span>
             <span>$${(item.price * item.quantity).toFixed(2)}</span>
         `;
-        cartItems.appendChild(listItem);
-    });
+                cartItems.appendChild(listItem);
+            });
 
-    document.getElementById("subtotal").textContent = `$${subtotal.toFixed(2)}`;
-    document.getElementById("total").textContent = `$${subtotal.toFixed(2)}`;
-}
+            document.getElementById("subtotal").textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById("total").textContent = `$${subtotal.toFixed(2)}`;
+        }
 
-// Alternar visibilidad del carrito
-document.getElementById("cartButton").addEventListener("click", () => {
-    const cartDetails = document.getElementById("cartDetails");
-    cartDetails.classList.toggle("hidden");
-});
-
-// Evento para el botón de finalizar compra
-document.getElementById("buyButton").addEventListener("click", () => {
-    if (cart.length === 0) {
-        alert("El carrito está vacío.");
-        return;
-    }
-
-    // Generar el mensaje de WhatsApp
-    const baseUrl = "https://wa.me/2235298074?text=";
-    let message = "Hola,%20quiero%20comprar%20los%20siguientes%20productos:%20";
-
-    // Agregar los productos y cantidades al mensaje
-    let subtotal = 0;
-    cart.forEach(item => {
-        subtotal += item.price * item.quantity;
-        message += `${item.name}%20(cantidad:%20${item.quantity})%20-%20`;
-    });
-
-    message = message.slice(0, -3); // Eliminar el último guion
-
-    // Agregar el subtotal al mensaje
-    message += `%0A%0AEl%20subtotal%20es:%20$${subtotal.toFixed(2)}`;
-
-    // Redirigir al enlace de WhatsApp
-    window.open(baseUrl + message, "_blank");
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    const sections = document.querySelectorAll('.slide-in');
-    const backToTopButton = document.getElementById('back-to-top');
-
-    function checkVisibility() {
-        const triggerBottom = window.innerHeight / 5 * 4;
-
-        sections.forEach(section => {
-            const sectionTop = section.getBoundingClientRect().top;
-
-            if (sectionTop < triggerBottom) {
-                section.classList.add('visible');
-            } else {
-                section.classList.remove('visible');
-            }
+        // Alternar visibilidad del carrito
+        document.getElementById("cartButton").addEventListener("click", () => {
+            const cartDetails = document.getElementById("cartDetails");
+            cartDetails.classList.toggle("hidden");
         });
 
-        // Mostrar/Ocultar el botón de volver arriba
-        if (window.scrollY > 500) {
-            backToTopButton.style.display = 'block';
-        } else {
-            backToTopButton.style.display = 'none';
-        }
-    }
-
-    window.addEventListener('scroll', checkVisibility);
-    checkVisibility(); // Para verificar la visibilidad al cargar la página
-});
-
-// Función para volver arriba
-document.getElementById('back-to-top').addEventListener('click', function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-document.addEventListener("DOMContentLoaded", function() {
-    const sections = document.querySelectorAll('.fade-in, .zoom-in'); // Selecciona ambas animaciones
-    const backToTopButton = document.getElementById('back-to-top');
-
-    function checkVisibility() {
-        const triggerBottom = window.innerHeight / 5 * 4;
-
-        sections.forEach(section => {
-            const sectionTop = section.getBoundingClientRect().top;
-
-            if (sectionTop < triggerBottom) {
-                section.classList.add('visible');
-            } else {
-                section.classList.remove('visible');
+        // Evento para el botón de finalizar compra
+        document.getElementById("buyButton").addEventListener("click", () => {
+            if (cart.length === 0) {
+                alert("El carrito está vacío.");
+                return;
             }
+
+            // Generar el mensaje de WhatsApp
+            const baseUrl = "https://wa.me/2235298074?text=";
+            let message = "Hola,%20quiero%20comprar%20los%20siguientes%20productos:%20";
+
+            // Agregar los productos y cantidades al mensaje
+            let subtotal = 0;
+            cart.forEach(item => {
+                subtotal += item.price * item.quantity;
+                message += `${item.name}%20(cantidad:%20${item.quantity})%20-%20`;
+            });
+
+            message = message.slice(0, -3); // Eliminar el último guion
+
+            // Agregar el subtotal al mensaje
+            message += `%0A%0AEl%20subtotal%20es:%20$${subtotal.toFixed(2)}`;
+
+            // Redirigir al enlace de WhatsApp
+            window.open(baseUrl + message, "_blank");
         });
 
-        // Mostrar/Ocultar el botón de volver arriba
-        if (window.scrollY > 500) {
-            backToTopButton.style.display = 'block';
-        } else {
-            backToTopButton.style.display = 'none';
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll('.slide-in');
+            const backToTopButton = document.getElementById('back-to-top');
+
+            function checkVisibility() {
+                const triggerBottom = window.innerHeight / 5 * 4;
+
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+
+                    if (sectionTop < triggerBottom) {
+                        section.classList.add('visible');
+                    } else {
+                        section.classList.remove('visible');
+                    }
+                });
+
+                // Mostrar/Ocultar el botón de volver arriba
+                if (window.scrollY > 500) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            }
+
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility(); // Para verificar la visibilidad al cargar la página
+        });
+
+        // Función para volver arriba
+        document.getElementById('back-to-top').addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll('.fade-in, .zoom-in'); // Selecciona ambas animaciones
+            const backToTopButton = document.getElementById('back-to-top');
+
+            function checkVisibility() {
+                const triggerBottom = window.innerHeight / 5 * 4;
+
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+
+                    if (sectionTop < triggerBottom) {
+                        section.classList.add('visible');
+                    } else {
+                        section.classList.remove('visible');
+                    }
+                });
+
+                // Mostrar/Ocultar el botón de volver arriba
+                if (window.scrollY > 500) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            }
+
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility(); // Para verificar la visibilidad al cargar la página
+        });
+
+        // Función para volver arriba
+        document.getElementById('back-to-top').addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Función para decrementar cantidad en el carrito directamente
+        function decrementCartItem(index) {
+            const item = cart[index];
+            if (item.quantity > 1) {
+                item.quantity--;
+            } else {
+                cart.splice(index, 1); // Eliminar del carrito si la cantidad es 0
+            }
+            updateCartDisplay();
         }
-    }
 
-    window.addEventListener('scroll', checkVisibility);
-    checkVisibility(); // Para verificar la visibilidad al cargar la página
-});
+        // Función para actualizar el carrito (actualizado)
+        function updateCartDisplay() {
+            const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById("cartCount").textContent = cartCount;
 
-// Función para volver arriba
-document.getElementById('back-to-top').addEventListener('click', function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
+            const cartItems = document.getElementById("cartItems");
+            cartItems.innerHTML = "";
+            let subtotal = 0;
+            cart.forEach((item, index) => {
+                subtotal += item.price * item.quantity;
+                const listItem = document.createElement("li");
+                listItem.className = "flex justify-between items-center";
+                listItem.innerHTML = `
+            <div class="flex items-center">
+                <span>${item.name} (x${item.quantity})</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                <button onclick="decrementCartItem(${index})" class="bg-red-600 text-white px-2 py-1 rounded">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+        `;
+                cartItems.appendChild(listItem);
+            });
 
-        </script>
-    </body>
+            document.getElementById("subtotal").textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById("total").textContent = `$${subtotal.toFixed(2)}`;
+        }
+
+    </script>
+</body>
+
 </html>
