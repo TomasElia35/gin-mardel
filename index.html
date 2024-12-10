@@ -1,0 +1,649 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Gin Tonic Mar del Plata</title>
+        <meta name="description" content="Gin Tonic artesanal en Mar del Plata. Descubre los mejores productos y sabores.">
+        <meta name="keywords" content="Gin Tonic, Artesanal, Mar del Plata, Bebidas Premium">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="/styles/style.css">
+    </head>
+    <body class="bg-gray-100">
+        <!-- Navbar -->
+        <!-- Navbar con menú hamburguesa -->
+        <nav class="navbar fixed w-full z-10 top-0 bg-transparent text-white" id="navbar">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <a href="#home">
+                            <img alt="Logo de Gin Tonic Mar del Plata" class="h-8 w-8" height="32"
+                                src="https://storage.googleapis.com/a1aa/image/GuE25FXLvLISGtNiXPeeclC6B3KSx8UZiMZ8wmrU0TYWHh3TA.jpg"
+                                width="32" />
+                        </a>
+                        <a href="#home">
+                            <h1 class="ml-3 text-2xl font-bold">Gin Tonic Mar del Plata</h1>
+                        </a>
+                    </div>
+                    <button class="block md:hidden focus:outline-none" id="menu-button">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                    <div id="menu" class="hidden md:flex md:items-center space-x-4">
+                        <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                            href="#home">Inicio</a>
+                        <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                            href="#about">Nosotros</a>
+                        <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                            href="#products">Productos</a>
+                        <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                            href="#contact">Contacto</a>
+                        <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                            href="#ubicacion">Ubicación</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Hero Section -->
+        <section
+            class="relative h-screen flex items-center justify-center bg-cover bg-center animate__animated animate__fadeIn"
+            id="home" style="background-image: url('./img/img123.png.webp') ">
+            <div class="absolute inset-0 bg-black opacity-50">
+            </div>
+            <div class="relative z-10 text-center text-white">
+                <h1 class="text-5xl font-bold">
+                    Bienvenidos a Gin Tonic Mar del Plata
+                </h1>
+                <p class="mt-4 text-xl">
+                    El mejor gin tonic artesanal de la ciudad
+                </p>
+                <a class="mt-8 inline-block bg-green-500 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-green-600"
+                    href="#products">
+                    Ver Productos
+                </a>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section class="py-16 bg-white opacity-0 fade-left" id="about">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900">
+                        Sobre Nosotros
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Somos un emprendimiento local dedicado a la producción de gin tonic artesanal de la más alta
+                        calidad.
+                    </p>
+                </div>
+                <div class="mt-10 flex flex-wrap justify-center">
+                    <div class="w-full md:w-1/3 p-4">
+                        <div class="bg-gray-100 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                            <img alt="Imagen de la destilería" class="w-full h-48 object-cover rounded-md" height="200"
+                                src="https://storage.googleapis.com/a1aa/image/ePQdaAnkfymVEUHgqPyRd0xjdgfdqvBLBzA2KHhpl1FqOCvnA.jpg"
+                                width="300" />
+                            <h3 class="mt-4 text-xl font-bold text-gray-900">
+                                Nuestra Destilería
+                            </h3>
+                            <p class="mt-2 text-gray-600">
+                                Ubicada en el corazón de Mar del Plata, nuestra destilería combina tradición y
+                                modernidad.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 p-4">
+                        <div class="bg-gray-100 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                            <img alt="Imagen de botellas de gin tonic" class="w-full h-48 object-cover rounded-md"
+                                height="200"
+                                src="https://storage.googleapis.com/a1aa/image/2sHF98CSpLpfRKGF5z9kHiPT8nofNaTnPF4TkrsxbH7PHh3TA.jpg"
+                                width="300" />
+                            <h3 class="mt-4 text-xl font-bold text-gray-900">
+                                Nuestros Productos
+                            </h3>
+                            <p class="mt-2 text-gray-600">
+                                Ofrecemos una variedad de gin tonics artesanales, cada uno con un sabor único y
+                                especial.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 p-4">
+                        <div class="bg-gray-100 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                            <img alt="Imagen de equipo de trabajo" class="w-full h-48 object-cover rounded-md" height="200"
+                                src="https://storage.googleapis.com/a1aa/image/yS7Q27yzQoqfASA5rRDXv8RfvweIKQNHHtDs7XaorObgOCvnA.jpg"
+                                width="300" />
+                            <h3 class="mt-4 text-xl font-bold text-gray-900">
+                                Nuestro Equipo
+                            </h3>
+                            <p class="mt-2 text-gray-600">
+                                Un equipo apasionado y dedicado a crear el mejor gin tonic artesanal para nuestros
+                                clientes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Products Section -->
+        <section class="py-16 bg-gray-100 opacity-0 zoom-in" id="products">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900">
+                        Nuestros Productos
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Descubre nuestra selección de gin tonics artesanales.
+                    </p>
+                </div>
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                        <img alt="Botella de gin tonic clásico" class="w-full h-64 object-cover rounded-md" height="300"
+                            src="https://storage.googleapis.com/a1aa/image/6Z1hO09keoxmcCDfzfBcgTfirgRxvkWEiyKlEb6afklY6I8eE.jpg"
+                            width="300" />
+                        <h3 class="mt-4 text-xl font-bold text-gray-900">
+                            Gin Tonic Clásico
+                        </h3>
+                        <p class="mt-2 text-gray-600">
+                            Un gin tonic clásico con un sabor equilibrado y refrescante.
+                        </p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                        <img alt="Botella de gin tonic cítrico" class="w-full h-64 object-cover rounded-md" height="300"
+                            src="https://storage.googleapis.com/a1aa/image/9SIQVN0Up1ahINokx03CePo2YhNfwrOjn9mwXg7vJh2RHh3TA.jpg"
+                            width="300" />
+                        <h3 class="mt-4 text-xl font-bold text-gray-900">
+                            Gin Tonic Cítrico
+                        </h3>
+                        <p class="mt-2 text-gray-600">
+                            Un gin tonic con un toque cítrico que realza su frescura.
+                        </p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                        <img alt="Botella de gin tonic especiado" class="w-full h-64 object-cover rounded-md" height="300"
+                            src="https://storage.googleapis.com/a1aa/image/iD6aYc57KCqAJpkykpS7TbsLOui2DMePxB67byfAm1xSHh3TA.jpg"
+                            width="300" />
+                        <h3 class="mt-4 text-xl font-bold text-gray-900">
+                            Gin Tonic Especiado
+                        </h3>
+                        <p class="mt-2 text-gray-600">
+                            Un gin tonic con una mezcla de especias que le da un sabor único.
+                        </p>
+                    </div>
+    
+                </div>
+                <div class="text-center">
+                    <a class="mt-8 inline-block bg-green-500 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-green-600"
+                        href='./pags/product.html'>
+                        Ver mas Productos
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section class="py-16 bg-white opacity-0 fade-right" id="contact">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900">
+                        Contacto
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Ponte en contacto con nosotros para más información.
+                    </p>
+                </div>
+                <div class="mt-10 flex justify-center">
+                    <form class="w-full max-w-lg bg-gray-100 p-8 rounded-lg shadow-lg">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-gray-700 font-bold mb-2" for="nombre">Nombre</label>
+                                <input
+                                    class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    type="text" id="nombre" placeholder="Tu nombre">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-bold mb-2" for="apellido">Apellido</label>
+                                <input
+                                    class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    type="text" id="apellido" placeholder="Tu Apellido">
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-bold mb-2" for="name">
+                                Direccion
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="name" placeholder="Tu nombre" type="text" />
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-bold mb-2" for="number">
+                                Celular
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="name" placeholder="Tu nombre" type="text" />
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-bold mb-2" for="email">
+                                Email
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="email" placeholder="Tu email" type="email" />
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-bold mb-2" for="message">
+                                Mensaje
+                            </label>
+                            <textarea
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="message" placeholder="Tu mensaje" rows="4">
+           </textarea>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <button
+                                class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                type="submit">
+                                Enviar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="py-16 bg-gray-100 opacity-0 zoom-in" id="ubicacion">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900">
+                        Ubicacion
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Mar del Plata, Buenos Aires, Argentina
+                    </p>
+                </div>
+                <div class="mt-8 slide-in">
+                    <iframe class="w-full h-64 object-cover rounded-lg" height="400"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31594.83767607388!2d-57.5733!3d-38.0055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584d94b1b1b1b1b%3A0x1b1b1b1b1b1b1b1b!2sMar%20del%20Plata%2C%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1sen!2sus!4v1633021234567!5m2!1sen!2sus"
+                        style="border:0;" width="600">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-6 animate__animated animate__fadeInUp">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center">
+                    <div class="flex space-x-4">
+                        <img alt="Visa logo, a blue and gold rectangular logo with the word 'Visa' in bold letters"
+                            height="40" src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" width="40" />
+                        <img alt="MasterCard logo, two overlapping circles in red and yellow with the word 'MasterCard' below"
+                            height="40" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                            width="40" />
+                        <img alt="Mercado Pago logo, a blue and white logo with two hands shaking in the center" height="40"
+                            src="https://elionshops.com/images/uploads/mercadopago.png" width="40" />
+                        <img alt="Cuenta DNI logo, a blue and white logo with two hands shaking in the center" height="40"
+                            src="https://www.cajademedicos.com.ar/wp-content/uploads/logo-cuenta-dni.png" width="40" />
+                        <img alt="PersonalPay logo, a blue and white logo with two hands shaking in the center" height="40"
+                            src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Mercado_Pago_logo.svg" width="40" />
+                    </div>
+                    <div class="flex space-x-4">
+                        <a class="hover:text-gray-400" href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="hover:text-gray-400" href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="hover:text-gray-400" href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="hover:text-gray-400" href="#">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-4 flex justify-center">
+                    <p>© 2023 Gin Tonic Mar del Plata. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    
+        <!-- Icono de WhatsApp -->
+        <a href="https://wa.me/2235298074?text=Me%20gustaria%20informacion%20sobre%20los%20productos%20en%20venta"
+            target="_blank" class="whatsapp-float">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png?20220228223904" alt="WhatsApp" />
+        </a>
+        <button id="back-to-top"
+            class="back-to-top bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600">
+            ↑
+        </button>
+    
+        <script src="/scripts/script.js"></script>
+    </body>
+</html>
+=======
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Gin Tonic Mar del Plata</title>
+    <meta name="description" content="Gin Tonic artesanal en Mar del Plata. Descubre los mejores productos y sabores.">
+    <meta name="keywords" content="Gin Tonic, Artesanal, Mar del Plata, Bebidas Premium">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles/gintest0.css">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <!-- Navbar con menú hamburguesa -->
+    <nav class="navbar fixed w-full z-10 top-0 bg-transparent text-white" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#home">
+                        <img alt="Logo de Gin Tonic Mar del Plata" class="h-8 w-8" height="32"
+                            src="https://storage.googleapis.com/a1aa/image/GuE25FXLvLISGtNiXPeeclC6B3KSx8UZiMZ8wmrU0TYWHh3TA.jpg"
+                            width="32" />
+                    </a>
+                    <a href="#home">
+                        <h1 class="ml-3 text-2xl font-bold">Gin Tonic Mar del Plata</h1>
+                    </a>
+                </div>
+                <button class="block md:hidden focus:outline-none" id="menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <div id="menu" class="hidden md:flex md:items-center space-x-4">
+                    <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                        href="#home">Inicio</a>
+                    <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                        href="#about">Nosotros</a>
+                    <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                        href="#products">Productos</a>
+                    <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                        href="#contact">Contacto</a>
+                    <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                        href="#ubicacion">Ubicación</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+        class="relative h-screen flex items-center justify-center bg-cover bg-center animate__animated animate__fadeIn"
+        id="home" style="background-image: url('./img/img123.png.webp') ">
+        <div class="absolute inset-0 bg-black opacity-50">
+        </div>
+        <div class="relative z-10 text-center text-white">
+            <h1 class="text-5xl font-bold">
+                Bienvenidos a Gin Tonic Mar del Plata
+            </h1>
+            <p class="mt-4 text-xl">
+                El mejor gin tonic artesanal de la ciudad
+            </p>
+            <a class="mt-8 inline-block bg-green-500 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-green-600"
+                href="#products">
+                Ver Productos
+            </a>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="py-16 bg-white opacity-0 fade-left" id="about">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900">
+                    Sobre Nosotros
+                </h2>
+                <p class="mt-4 text-lg text-gray-600">
+                    Somos un emprendimiento local dedicado a la producción de gin tonic artesanal de la más alta
+                    calidad.
+                </p>
+            </div>
+            <div class="mt-10 flex flex-wrap justify-center">
+                <div class="w-full md:w-1/3 p-4">
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                        <img alt="Imagen de la destilería" class="w-full h-48 object-cover rounded-md" height="200"
+                            src="https://storage.googleapis.com/a1aa/image/ePQdaAnkfymVEUHgqPyRd0xjdgfdqvBLBzA2KHhpl1FqOCvnA.jpg"
+                            width="300" />
+                        <h3 class="mt-4 text-xl font-bold text-gray-900">
+                            Nuestra Destilería
+                        </h3>
+                        <p class="mt-2 text-gray-600">
+                            Ubicada en el corazón de Mar del Plata, nuestra destilería combina tradición y
+                            modernidad.
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 p-4">
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                        <img alt="Imagen de botellas de gin tonic" class="w-full h-48 object-cover rounded-md"
+                            height="200"
+                            src="https://storage.googleapis.com/a1aa/image/2sHF98CSpLpfRKGF5z9kHiPT8nofNaTnPF4TkrsxbH7PHh3TA.jpg"
+                            width="300" />
+                        <h3 class="mt-4 text-xl font-bold text-gray-900">
+                            Nuestros Productos
+                        </h3>
+                        <p class="mt-2 text-gray-600">
+                            Ofrecemos una variedad de gin tonics artesanales, cada uno con un sabor único y
+                            especial.
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 p-4">
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                        <img alt="Imagen de equipo de trabajo" class="w-full h-48 object-cover rounded-md" height="200"
+                            src="https://storage.googleapis.com/a1aa/image/yS7Q27yzQoqfASA5rRDXv8RfvweIKQNHHtDs7XaorObgOCvnA.jpg"
+                            width="300" />
+                        <h3 class="mt-4 text-xl font-bold text-gray-900">
+                            Nuestro Equipo
+                        </h3>
+                        <p class="mt-2 text-gray-600">
+                            Un equipo apasionado y dedicado a crear el mejor gin tonic artesanal para nuestros
+                            clientes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Products Section -->
+    <section class="py-16 bg-gray-100 opacity-0 zoom-in" id="products">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900">
+                    Nuestros Productos
+                </h2>
+                <p class="mt-4 text-lg text-gray-600">
+                    Descubre nuestra selección de gin tonics artesanales.
+                </p>
+            </div>
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <img alt="Botella de gin tonic clásico" class="w-full h-64 object-cover rounded-md" height="300"
+                        src="https://storage.googleapis.com/a1aa/image/6Z1hO09keoxmcCDfzfBcgTfirgRxvkWEiyKlEb6afklY6I8eE.jpg"
+                        width="300" />
+                    <h3 class="mt-4 text-xl font-bold text-gray-900">
+                        Gin Tonic Clásico
+                    </h3>
+                    <p class="mt-2 text-gray-600">
+                        Un gin tonic clásico con un sabor equilibrado y refrescante.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <img alt="Botella de gin tonic cítrico" class="w-full h-64 object-cover rounded-md" height="300"
+                        src="https://storage.googleapis.com/a1aa/image/9SIQVN0Up1ahINokx03CePo2YhNfwrOjn9mwXg7vJh2RHh3TA.jpg"
+                        width="300" />
+                    <h3 class="mt-4 text-xl font-bold text-gray-900">
+                        Gin Tonic Cítrico
+                    </h3>
+                    <p class="mt-2 text-gray-600">
+                        Un gin tonic con un toque cítrico que realza su frescura.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <img alt="Botella de gin tonic especiado" class="w-full h-64 object-cover rounded-md" height="300"
+                        src="https://storage.googleapis.com/a1aa/image/iD6aYc57KCqAJpkykpS7TbsLOui2DMePxB67byfAm1xSHh3TA.jpg"
+                        width="300" />
+                    <h3 class="mt-4 text-xl font-bold text-gray-900">
+                        Gin Tonic Especiado
+                    </h3>
+                    <p class="mt-2 text-gray-600">
+                        Un gin tonic con una mezcla de especias que le da un sabor único.
+                    </p>
+                </div>
+
+            </div>
+            <div class="text-center">
+                <a class="mt-8 inline-block bg-green-500 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-green-600"
+                    href='./pags/gintest1.html'>
+                    Ver mas Productos
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="py-16 bg-white opacity-0 fade-right" id="contact">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900">
+                    Contacto
+                </h2>
+                <p class="mt-4 text-lg text-gray-600">
+                    Ponte en contacto con nosotros para más información.
+                </p>
+            </div>
+            <div class="mt-10 flex justify-center">
+                <form class="w-full max-w-lg bg-gray-100 p-8 rounded-lg shadow-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-gray-700 font-bold mb-2" for="nombre">Nombre</label>
+                            <input
+                                class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                type="text" id="nombre" placeholder="Tu nombre">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-bold mb-2" for="apellido">Apellido</label>
+                            <input
+                                class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                type="text" id="apellido" placeholder="Tu Apellido">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-bold mb-2" for="name">
+                            Direccion
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="name" placeholder="Tu nombre" type="text" />
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-bold mb-2" for="number">
+                            Celular
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="name" placeholder="Tu nombre" type="text" />
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-bold mb-2" for="email">
+                            Email
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="email" placeholder="Tu email" type="email" />
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-bold mb-2" for="message">
+                            Mensaje
+                        </label>
+                        <textarea
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="message" placeholder="Tu mensaje" rows="4">
+       </textarea>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button
+                            class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            type="submit">
+                            Enviar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 bg-gray-100 opacity-0 zoom-in" id="ubicacion">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900">
+                    Ubicacion
+                </h2>
+                <p class="mt-4 text-lg text-gray-600">
+                    Mar del Plata, Buenos Aires, Argentina
+                </p>
+            </div>
+            <div class="mt-8 slide-in">
+                <iframe class="w-full h-64 object-cover rounded-lg" height="400"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31594.83767607388!2d-57.5733!3d-38.0055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584d94b1b1b1b1b%3A0x1b1b1b1b1b1b1b1b!2sMar%20del%20Plata%2C%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1sen!2sus!4v1633021234567!5m2!1sen!2sus"
+                    style="border:0;" width="600">
+                </iframe>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 animate__animated animate__fadeInUp">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex space-x-4">
+                    <img alt="Visa logo, a blue and gold rectangular logo with the word 'Visa' in bold letters"
+                        height="40" src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" width="40" />
+                    <img alt="MasterCard logo, two overlapping circles in red and yellow with the word 'MasterCard' below"
+                        height="40" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                        width="40" />
+                    <img alt="Mercado Pago logo, a blue and white logo with two hands shaking in the center" height="40"
+                        src="https://elionshops.com/images/uploads/mercadopago.png" width="40" />
+                    <img alt="Cuenta DNI logo, a blue and white logo with two hands shaking in the center" height="40"
+                        src="https://www.cajademedicos.com.ar/wp-content/uploads/logo-cuenta-dni.png" width="40" />
+                    <img alt="PersonalPay logo, a blue and white logo with two hands shaking in the center" height="40"
+                        src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Mercado_Pago_logo.svg" width="40" />
+                </div>
+                <div class="flex space-x-4">
+                    <a class="hover:text-gray-400" href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="hover:text-gray-400" href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="hover:text-gray-400" href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="hover:text-gray-400" href="#">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-4 flex justify-center">
+                <p>© 2023 Gin Tonic Mar del Plata. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Icono de WhatsApp -->
+    <a href="https://wa.me/2235298074?text=Me%20gustaria%20informacion%20sobre%20los%20productos%20en%20venta"
+        target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png?20220228223904" alt="WhatsApp" />
+    </a>
+    <button id="back-to-top"
+        class="back-to-top bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600">
+        ↑
+    </button>
+
+    <script src="/scripts/gintest0.js"></script>
+</body>
+
+</html>
+>>>>>>> 28afa4b693bca9d6fd5b19677d6597168c8120cd

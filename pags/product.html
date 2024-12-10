@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>
+            Gin Tonic Mar del Plata
+        </title>
+        <meta name="description" content="Gin Tonic artesanal en Mar del Plata. Descubre los mejores productos y sabores.">
+        <meta name="keywords" content="Gin Tonic, Artesanal, Mar del Plata, Bebidas Premium">
+        <script src="https://cdn.tailwindcss.com">
+        </script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="/styles/product.css">
+    </head>
+    <body class="bg-gray-100">
+        <nav class="navbar fixed w-full z-10 top-0 bg-transparent text-white" id="navbar">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <a href="/index.html">
+                            <img alt="Logo de Gin Tonic Mar del Plata" class="h-8 w-8" height="32"
+                                src="https://storage.googleapis.com/a1aa/image/GuE25FXLvLISGtNiXPeeclC6B3KSx8UZiMZ8wmrU0TYWHh3TA.jpg"
+                                width="32" />
+                        </a>
+                        <a href="/index.html">
+                            <h1 class="ml-3 text-2xl font-bold">Gin Tonic Mar del Plata</h1>
+                        </a>
+                    </div>
+                    <button class="block md:hidden focus:outline-none" id="menu-button">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                    <div id="menu" class="hidden md:flex md:items-center space-x-4">
+                        <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                            href="#">Inicio</a>
+                        <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                            href="#productoSemanal">Semanal</a>
+                        <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                            href="#products">Productos</a>
+                        <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                            href="#promo">Promociones</a>
+                        <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                            href="#ingresos">Proximamente</a>
+                        <a class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                            href="#envios">Envios</a>
+                        <div class="relative">
+                            <button id="cartButton"
+                                class="nav-link hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>Carrito (<span id="cartCount">0</span>)</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </nav>
+    
+    
+        <section class="pt-20 slide-in" id="productoSemanal">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        Producto Semanal
+                    </h2>
+                    <p class="mt-4 text-lg leading-6 text-gray-600">
+                        Conoce nuestro producto destacado de la semana.
+                    </p>
+                </div>
+                <div class="mt-10">
+                    <div class="flex justify-center">
+                        <img alt="Imagen del producto semanal, una botella de Gin Tonic artesanal con un diseño elegante y moderno"
+                            class="rounded-lg shadow-lg" height="300" src="../img/BRANCA-ORIG.PNG" width="300" />
+                    </div>
+                    <div class="text-center mt-4">
+                        <h3 class="text-2xl font-bold">Gin Tonic frutos rojos</h3>
+                        <p class="mt-4 text-lg leading-6 text-gray-600">
+                            Gin artesanal con hierbas de frutos rojos.
+                        </p>
+    
+                        <p class="text-xl font-bold text-gray-900">
+                            $500
+                        </p>
+                        <a class="mt-2 inline-block bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600"
+                            href="https://wa.me/1234567890?text=Hola,%20quiero%20comprar%20el%20producto%20semanal">
+                            Comprar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    
+        <section class="pt-20 zoom-in" id="products">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        Nuestros Productos
+                    </h2>
+                    <p class="mt-4 text-lg leading-6 text-gray-600">
+                        Explora nuestra variedad de productos artesanales.
+                    </p>
+                </div>
+                <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+                    <!-- Producto 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño clásico"
+                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
+                            src="https://storage.googleapis.com/a1aa/image/9P9GcsNQUIoOPpjIYv9gw1pADtOG95liwRgNte3e1lPDg53TA.jpg"
+                            width="300" />
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Gin Tonic Clásico</h3>
+                        <p class="mt-2 text-gray-600">Un sabor clásico y refinado.</p>
+                        <p class="mt-2 text-2xl font-bold text-gray-900">$1600</p>
+                        <div class="flex items-center mt-4">
+                            <button
+                                class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
+                                onclick="decrement('quantity1')">-</button>
+                            <input type="number" id="quantity1" value="0"
+                                class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
+                            <button
+                                class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
+                                onclick="increment('quantity1')">+</button>
+                            <button
+                                class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
+                                onclick="addToCart('Gin Tonic Clásico', 1600, 'quantity1')">Agregar</button>
+                        </div>
+                    </div>
+    
+                    <!-- Producto 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño frutal"
+                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
+                            src="https://storage.googleapis.com/a1aa/image/qLaOgskgrMrkBRceI0HvvRa3K42GQeVuXsNlee0BwWzGAmfeE.jpg"
+                            width="300" />
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Gin Tonic Frutal</h3>
+                        <p class="mt-2 text-gray-600">Un toque de frescura y frutas.</p>
+                        <p class="mt-2 text-2xl font-bold text-gray-900">$400</p>
+                        <div class="flex items-center mt-4">
+                            <button
+                                class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
+                                onclick="decrement('quantity2')">-</button>
+                            <input type="number" id="quantity2" value="0"
+                                class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
+                            <button
+                                class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
+                                onclick="increment('quantity2')">+</button>
+                            <button
+                                class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
+                                onclick="addToCart('Gin Tonic Frutal', 400, 'quantity2')">Agregar</button>
+                        </div>
+                    </div>
+    
+                    <!-- Producto 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño especiado"
+                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
+                            src="https://storage.googleapis.com/a1aa/image/b4z9ECwl0a5jM145qewTCSAI6wJLfPztUeFfklpLR8ybAmfeE.jpg"
+                            width="300" />
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Gin Tonic Especiado</h3>
+                        <p class="mt-2 text-gray-600">Una mezcla de especias exóticas.</p>
+                        <p class="mt-2 text-2xl font-bold text-gray-900">$400</p>
+                        <div class="flex items-center mt-4">
+                            <button
+                                class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
+                                onclick="decrement('quantity3')">-</button>
+                            <input type="number" id="quantity3" value="0"
+                                class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
+                            <button
+                                class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
+                                onclick="increment('quantity3')">+</button>
+                            <button
+                                class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
+                                onclick="addToCart('Gin Tonic Especiado', 400, 'quantity3')">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    
+        <section class="pt-20 slide-in" id="promo">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        Nuestras Promociones
+                    </h2>
+                    <p class="mt-4 text-lg leading-6 text-gray-600">
+                        Explora nuestra variedad de productos artesanales.
+                    </p>
+                </div>
+                <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+                    <!-- Producto 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño clásico"
+                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
+                            src="https://storage.googleapis.com/a1aa/image/EcJKxqgaEYaCBdUCeanWMUPFcqjopEdt3sqcaXC33NRBw87JA.jpg"
+                            width="300" />
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Gin Tonic Clásico</h3>
+                        <p class="mt-2 text-gray-600">Un sabor clásico y refinado.</p>
+                        <p class="mt-2 text-2xl font-bold text-gray-900">$1600</p>
+                        <div class="flex items-center mt-4">
+                            <button
+                                class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
+                                onclick="decrement('quantity5')">-</button>
+                            <input type="number" id="quantity5" value="0"
+                                class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
+                            <button
+                                class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
+                                onclick="increment('quantity5')">+</button>
+                            <button
+                                class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
+                                onclick="addToCart('Gin Tonic Clásico', 1600, 'quantity5')">Agregar</button>
+                        </div>
+                    </div>
+    
+                    <!-- Producto 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño frutal"
+                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
+                            src="https://storage.googleapis.com/a1aa/image/fNyzSezFbeKj8oFkq3K9VYgPJhcr8Sbtz98t8X876aKUAzvnA.jpg"
+                            width="300" />
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Gin Tonic Frutal</h3>
+                        <p class="mt-2 text-gray-600">Un toque de frescura y frutas.</p>
+                        <p class="mt-2 text-2xl font-bold text-gray-900">$400</p>
+                        <div class="flex items-center mt-4">
+                            <button
+                                class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
+                                onclick="decrement('quantity6')">-</button>
+                            <input type="number" id="quantity6" value="0"
+                                class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
+                            <button
+                                class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
+                                onclick="increment('quantity6')">+</button>
+                            <button
+                                class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
+                                onclick="addToCart('Gin Tonic Frutal', 400, 'quantity6')">Agregar</button>
+                        </div>
+                    </div>
+    
+                    <!-- Producto 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño especiado"
+                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
+                            src="https://storage.googleapis.com/a1aa/image/g3HShu0NcfwFUqndH9RXEg1w2sjziwkJ8q5457eeKcNRAzvnA.jpg"
+                            width="300" />
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Gin Tonic Especiado</h3>
+                        <p class="mt-2 text-gray-600">Una mezcla de especias exóticas.</p>
+                        <p class="mt-2 text-2xl font-bold text-gray-900">$400</p>
+                        <div class="flex items-center mt-4">
+                            <button
+                                class="bg-blue-500 text-white px-4 py-2 rounded-l hover:bg-blue-600 transition duration-200"
+                                onclick="decrement('quantity7')">-</button>
+                            <input type="number" id="quantity7" value="0"
+                                class="text-center border border-blue-500 w-16 mx-2 rounded-md shadow-sm" readonly />
+                            <button
+                                class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition duration-200"
+                                onclick="increment('quantity7')">+</button>
+                            <button
+                                class="ml-4 bg-green-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-green-700 transition duration-200"
+                                onclick="addToCart('Gin Tonic Especiado', 400, 'quantity7')">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="pt-20 slide-in" id="ingresos">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        Próximamente
+                    </h2>
+                    <p class="mt-4 text-lg leading-6 text-gray-600">
+                        Nuevos productos y sabores en camino.
+                    </p>
+                </div>
+                <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño clásico"
+                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
+                            src="https://storage.googleapis.com/a1aa/image/waxfW1KIqrXrIKMJzvfQ1frBjBD9Bh2ODjeYQ5wdT2WuAmfeE.jpg"
+                            width="300" />
+                        <h3 class="text-xl font-bold text-gray-900">
+                            2x1 en Gin Tonic Clásico
+                        </h3>
+                        <p class="mt-4 text-gray-600">
+                            Llévate dos botellas por el precio de una.
+                        </p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño frutal"
+                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
+                            src="https://storage.googleapis.com/a1aa/image/TifyY058MMz1UqELHlbB5eaY379xZi9EmIJPQ6qkdyaFg53TA.jpg"
+                            width="300" />
+                        <h3 class="text-xl font-bold text-gray-900">
+                            20% de Descuento en Gin Tonic Frutal
+                        </h3>
+                        <p class="mt-4 text-gray-600">
+                            Descuento en la compra de tres botellas.
+                        </p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <img alt="Imagen de una botella de Gin Tonic artesanal con un diseño especiado"
+                            class="h-60 w-full object-cover mb-6 rounded-lg" height="300"
+                            src="https://storage.googleapis.com/a1aa/image/wGCdp2kSSn7RHlnHaBhiW6Z7Avg9jQH3fWVq4dlf1veffLf9E.jpg"
+                            width="300" />
+                        <h3 class="text-xl font-bold text-gray-900">
+                            Regalo de Gin Tonic especiado
+                        </h3>
+                        <p class="mt-4 text-gray-600">
+                            Recibe una botella de regalo con la compra de cinco
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="pt-20 slide-in" id="envios">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        Envíos
+                    </h2>
+                    <p class="mt-4 text-lg leading-6 text-gray-600">
+                        Realizamos envíos a toda la ciudad.
+                    </p>
+                </div>
+                <div class="mt-10 flex justify-center mb-10">
+                    <iframe class="object-cover rounded-lg w-full max-w-4xl h-96 sm:h-500"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31594.83767607388!2d-57.5733!3d-38.0055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584d94b1b1b1b1b%3A0x1b1b1b1b1b1b1b1b!2sMar%20del%20Plata%2C%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1sen!2sus!4v1633021234567!5m2!1sen!2sus"
+                        style="border:0;">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    
+    
+        <footer class="bg-gray-800 text-white py-6">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center">
+                    <div class="flex space-x-4">
+                        <img alt="Visa logo, a blue and gold rectangular logo with the word 'Visa' in bold letters" height="40" src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" width="40"/>
+                        <img alt="MasterCard logo, two overlapping circles in red and yellow with the word 'MasterCard' below" height="40" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" width="40"/>
+                        <img alt="Mercado Pago logo, a blue and white logo with two hands shaking in the center" height="40" src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Mercado_Pago_logo.svg" width="40"/>
+                        <img alt="Cuenta DNI logo, a blue and white logo with two hands shaking in the center" height="40" src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Mercado_Pago_logo.svg" width="40"/>
+                        <img alt="PersonalPay logo, a blue and white logo with two hands shaking in the center" height="40" src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Mercado_Pago_logo.svg" width="40"/>
+    
+                    </div>
+                    <div class="flex space-x-4">
+                        <a class="hover:text-gray-400" href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="hover:text-gray-400" href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="hover:text-gray-400" href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="hover:text-gray-400" href="#">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-4 flex justify-center">
+                    <p>© 2023 Gin Tonic Mar del Plata. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    
+    
+        <div id="cartDetails" class="hidden fixed top-20 right-4 bg-white shadow-lg w-80 rounded-lg p-4">
+            <h2 class="text-xl font-bold mb-4">Carrito de Compras</h2>
+            <ul id="cartItems" class="space-y-2">
+                <!-- Productos aparecerán aquí -->
+            </ul>
+            <div class="border-t pt-2 mt-4">
+                <p class="flex justify-between">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">$0.00</span>
+                </p>
+                <p class="flex justify-between font-bold">
+                    <span>Total:</span>
+                    <span id="total">$0.00</span>
+                </p>
+                <button id="buyButton" class="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg w-full">
+                    Finalizar Compra
+                </button>
+            </div>
+        </div>
+    
+    
+        <a href="https://wa.me/2235298074?text=Me%20gustaria%20informacion%20sobre%20los%20productos%20en%20venta"
+        target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png?20220228223904" alt="WhatsApp" />
+    </a>
+    
+        
+    
+        <button id="back-to-top"
+            class="back-to-top bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600">
+            ↑
+        </button>
+    
+    
+        <script src="/scripts/product.js"></script>
+    </body>
+</html>
