@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -34,7 +35,7 @@ html {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    /* display: none; */
+    display: none;
     animation: fadeIn 0.3s;
     z-index: 50;
 }
@@ -46,7 +47,7 @@ html {
 /* CSS para el menú hamburguesa */
 @media (max-width: 768px) {
     #menu {
-        /* display: none; */
+        display: none;
         /* Ocultar el menú inicialmente */
         flex-direction: column;
         background-color: rgba(0, 0, 0, 0.9);
