@@ -12,7 +12,157 @@
         </script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="/styles/product.css">
+        <!-- <link rel="stylesheet" href="/styles/product.css"> -->
+         <style>
+            
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    top: 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.nav-item {
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-link {
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: translateY(-5px);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    animation: fadeIn 0.3s;
+    z-index: 50;
+}
+
+.back-to-top.show {
+    display: block;
+}
+
+/* CSS para el menú hamburguesa */
+@media (max-width: 768px) {
+    #menu {
+        display: none;
+        /* Ocultar el menú inicialmente */
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 64px;
+        /* Justo debajo del navbar */
+        width: 100%;
+        left: 0;
+        z-index: 10;
+    }
+
+    #menu.show {
+        display: flex;
+        /* Mostrar el menú al hacer clic */
+    }
+}
+
+#cart {
+    position: fixed;
+    right: -100%;
+    /* Fuera de la pantalla inicialmente */
+    top: 0;
+    height: 100vh;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0);
+    /* Estado inicial: escondido */
+}
+
+#cart.visible {
+    transform: translateX(-100%);
+    /* Estado visible */
+}
+
+
+/* TEST */
+
+
+/* Animaciones de entrada */
+.slide-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.slide-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Botón de volver arriba */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Ocultar inicialmente */
+    z-index: 1000;
+}
+
+/* Animación de fade-in */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* Animación de zoom */
+.zoom-in {
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.zoom-in.visible {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 80px; /* Ajusta la distancia desde el fondo para que esté encima del botón "↑" */
+    right: 20px; /* Mantiene la misma distancia desde la derecha */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    /*background-color: #25D366; /* Color de fondo de WhatsApp */
+    border-radius: 50%; /* Hace que el botón sea redondo */
+    padding: 10px; /* Espaciado interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    display: flex; /* Para centrar el ícono */
+    justify-content: center; /* Centra el ícono horizontalmente */
+    align-items: center; /* Centra el ícono verticalmente */
+}
+
+.whatsapp-float img {
+    width: 40px; /* Ajusta el tamaño del ícono */
+    height: 40px; /* Ajusta el tamaño del ícono */
+}
+         </style>
     </head>
     <body class="bg-gray-100">
         <nav class="navbar fixed w-full z-10 top-0 bg-transparent text-white" id="navbar">
@@ -403,6 +553,272 @@
         </button>
     
     
-        <script src="/scripts/product.js"></script>
+        <script>
+            // JavaScript optimizado con debounce
+function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
+    };
+}
+
+window.addEventListener(
+    'scroll',
+    debounce(() => {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    }, 100)
+);
+
+// JavaScript para el menú hamburguesa
+const menuButton = document.getElementById('menu-button');
+const menu = document.getElementById('menu');
+
+menuButton.addEventListener('click', () => {
+    menu.classList.toggle('show');
+});
+
+// Mostrar botón "Volver arriba"
+const backToTop = document.getElementById("back-to-top");
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        backToTop.classList.add("show");
+    } else {
+        backToTop.classList.remove("show");
+    }
+});
+backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll('.fade-in');
+
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll('section');
+
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('slide-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+function increment() {
+    var quantityInput = document.getElementById('quantity');
+    quantityInput.value = parseInt(quantityInput.value) + 1;
+    updateBuyButton();
+}
+
+function decrement() {
+    var quantityInput = document.getElementById('quantity');
+    if (parseInt(quantityInput.value) > 1) {
+        quantityInput.value = parseInt(quantityInput.value) - 1;
+        updateBuyButton();
+    }
+}
+
+function updateBuyButton() {
+    var quantity = document.getElementById('quantity').value;
+    var buyButton = document.getElementById('buyButton');
+    buyButton.href = `https://wa.me/1234567890?text=Hola,%20quiero%20comprar%20el%20Gin%20Tonic%20Clásico%20cantidad:%20${quantity}`;
+}
+
+// Actualizar la visualización del carrito
+// Inicializar carrito
+const cart = [];
+
+// Función para incrementar cantidad
+function increment(id) {
+    const input = document.getElementById(id);
+    if (input) input.value = parseInt(input.value) + 1;
+}
+
+// Función para decrementar cantidad
+function decrement(id) {
+    const input = document.getElementById(id);
+    if (input && input.value > 1) input.value = parseInt(input.value) - 1;
+}
+
+// Función para agregar al carrito
+function addToCart(name, price, quantityId) {
+    const quantity = parseInt(document.getElementById(quantityId).value);
+    const existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+        existingItem.quantity += quantity;
+    } else {
+        cart.push({ name, price, quantity });
+    }
+    updateCartDisplay();
+}
+
+// Función para actualizar el carrito
+function updateCartDisplay() {
+    const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById("cartCount").textContent = cartCount;
+
+    const cartItems = document.getElementById("cartItems");
+    cartItems.innerHTML = "";
+    let subtotal = 0;
+    cart.forEach(item => {
+        subtotal += item.price * item.quantity;
+        const listItem = document.createElement("li");
+        listItem.className = "flex justify-between";
+        listItem.innerHTML = `
+            <span>${item.name} (x${item.quantity})</span>
+            <span>$${(item.price * item.quantity).toFixed(2)}</span>
+        `;
+        cartItems.appendChild(listItem);
+    });
+
+    document.getElementById("subtotal").textContent = `$${subtotal.toFixed(2)}`;
+    document.getElementById("total").textContent = `$${subtotal.toFixed(2)}`;
+}
+
+// Alternar visibilidad del carrito
+document.getElementById("cartButton").addEventListener("click", () => {
+    const cartDetails = document.getElementById("cartDetails");
+    cartDetails.classList.toggle("hidden");
+});
+
+// Evento para el botón de finalizar compra
+document.getElementById("buyButton").addEventListener("click", () => {
+    if (cart.length === 0) {
+        alert("El carrito está vacío.");
+        return;
+    }
+
+    // Generar el mensaje de WhatsApp
+    const baseUrl = "https://wa.me/2235298074?text=";
+    let message = "Hola,%20quiero%20comprar%20los%20siguientes%20productos:%20";
+
+    // Agregar los productos y cantidades al mensaje
+    let subtotal = 0;
+    cart.forEach(item => {
+        subtotal += item.price * item.quantity;
+        message += `${item.name}%20(cantidad:%20${item.quantity})%20-%20`;
+    });
+
+    message = message.slice(0, -3); // Eliminar el último guion
+
+    // Agregar el subtotal al mensaje
+    message += `%0A%0AEl%20subtotal%20es:%20$${subtotal.toFixed(2)}`;
+
+    // Redirigir al enlace de WhatsApp
+    window.open(baseUrl + message, "_blank");
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll('.slide-in');
+    const backToTopButton = document.getElementById('back-to-top');
+
+    function checkVisibility() {
+        const triggerBottom = window.innerHeight / 5 * 4;
+
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+
+            if (sectionTop < triggerBottom) {
+                section.classList.add('visible');
+            } else {
+                section.classList.remove('visible');
+            }
+        });
+
+        // Mostrar/Ocultar el botón de volver arriba
+        if (window.scrollY > 500) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility(); // Para verificar la visibilidad al cargar la página
+});
+
+// Función para volver arriba
+document.getElementById('back-to-top').addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll('.fade-in, .zoom-in'); // Selecciona ambas animaciones
+    const backToTopButton = document.getElementById('back-to-top');
+
+    function checkVisibility() {
+        const triggerBottom = window.innerHeight / 5 * 4;
+
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+
+            if (sectionTop < triggerBottom) {
+                section.classList.add('visible');
+            } else {
+                section.classList.remove('visible');
+            }
+        });
+
+        // Mostrar/Ocultar el botón de volver arriba
+        if (window.scrollY > 500) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility(); // Para verificar la visibilidad al cargar la página
+});
+
+// Función para volver arriba
+document.getElementById('back-to-top').addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+        </script>
     </body>
 </html>
